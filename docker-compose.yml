@@ -1,0 +1,13 @@
+services:
+  ioc:
+    image: ghcr.io/cnpem/si-ap-11sp-ramplc-epics-softioc:$TAG
+    network_mode: "host"
+    build:
+      context: ./
+      dockerfile: docker/Dockerfile
+      target: static-link
+      labels:
+        org.opencontainers.image.source: https://github.com/cnpem/si-ap-11sp-ramplc-epics-softioc
+      args:
+        REPONAME: si-ap-11sp-ramplc-epics-softioc
+        RUNDIR: /opt/si-ap-11sp-ramplc-epics-softioc/iocBoot/iocSoftRamplc
