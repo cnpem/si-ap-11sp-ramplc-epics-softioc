@@ -1,0 +1,7 @@
+# Write same setpoint for all vertical coils
+
+record(dfanout, "$(P)PS-LCV:Current-SP")
+{
+    field(OUTA, "$(P)PS-LCV-1:Current-SP PP")
+    field(OUTB, "$(P)PS-LCV-2:Current-SP PP")
+}
