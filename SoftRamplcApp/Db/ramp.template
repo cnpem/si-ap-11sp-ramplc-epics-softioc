@@ -12,7 +12,7 @@ record(ai, "$(P)$(R)TargetCurrent$(ORIENTATION)-RB") {
 record(calcout, "$(P)$(R)RampCalc$(ORIENTATION)") {
     field(DESC, "Ramp the setpoint to a target value")
 
-    field(SDIS, "$(P)$(R)Start-Cmd")
+    field(SDIS, "$(P)$(R)Writing-Sts")
     field(DISV, 0)
 
     field(INPA, "$(P)$(R)RampCalc$(ORIENTATION)")
