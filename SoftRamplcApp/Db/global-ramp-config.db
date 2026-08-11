@@ -14,3 +14,21 @@ record(bo, "$(P)$(R)Start-Cmd") {
     field(ZNAM, "Disabled")
     field(ONAM, "Enabled")
 }
+
+# Checks if writing to the foils is enabled - i.e if the user wants it to ramp
+# (Start-Cmd) and the feedfoward loop is disabled (LoopState-Sts)
+
+record(calcout, "$(P)$(R)CheckWriting") {
+    field(INPA, "$(P)$(R)Start-Cmd CP")
+    field(INPB, "$(P)BS-IDFF-LC:LoopState-Sts CP")
+
+    field(CALC, "A && !B")
+
+    field(OUT, "$(P)$(R)Writing-Sts PP")
+}
+
+record(bo, "$(P)$(R)Writing-Sts") {
+    field(DESC, "Check if writing is enabled")
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+}
