@@ -4,11 +4,18 @@
 
 cd "${TOP}"
 
+epicsEnvSet("P", "SI-11SP:")
+epicsEnvSet("R", "AP-Ramp:")
+
 ## Register all support components
-dbLoadDatabase "dbd/SoftRamplc.dbd"
+dbLoadDatabase "$(TOP)/dbd/SoftRamplc.dbd"
 SoftRamplc_registerRecordDeviceDriver pdbbase
 
 ## Load record instances
+
+dbLoadRecords("$(TOP)/db/global-ramp-config.db", "P=$(P), R=$(R)")
+dbLoadRecords("$(TOP)/db/vertical-coils.db", "P=$(P), R=$(R)")
+dbLoadRecords("$(TOP)/db/coils.db", "P=$(P), R=$(R)")
 
 cd "${TOP}/iocBoot/${IOC}"
 iocInit
