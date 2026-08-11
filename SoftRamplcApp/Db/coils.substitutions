@@ -1,0 +1,6 @@
+file "ramp.template"
+{
+    pattern { ORIENTATION, HW_SP }
+            { H,           "PS-LCH-1:" }
+            { V,           "PS-LCV:" }
+}

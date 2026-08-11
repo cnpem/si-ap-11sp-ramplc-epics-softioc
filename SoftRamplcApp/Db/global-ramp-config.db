@@ -1,0 +1,16 @@
+record(ao, "$(P)$(R)CurrentStep-SP") {
+    field(DESC, "Step of the current ramp")
+    field(EGU, "A")
+    field(OUT, "$(P)$(R)CurrentStep-RB PP")
+}
+
+record(ai, "$(P)$(R)CurrentStep-RB") {
+    field(DESC, "Step of the current ramp Readback")
+    field(EGU, "A")
+}
+
+record(bo, "$(P)$(R)Start-Cmd") {
+    field(DESC, "Enable the current ramp")
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+}
