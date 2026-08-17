@@ -15,7 +15,7 @@ record(calcout, "$(P)$(R)RampCalc$(ORIENTATION)") {
     field(SDIS, "$(P)$(R)Writing-Sts")
     field(DISV, 0)
 
-    field(INPA, "$(P)$(R)RampCalc$(ORIENTATION)")
+    field(INPA, "$(P)$(HW_SP)Current-SP")
     field(INPB, "$(P)$(R)CurrentStep-RB")
     field(INPC, "$(P)$(R)TargetCurrent$(ORIENTATION)-RB")
 

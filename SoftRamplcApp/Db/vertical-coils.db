@@ -5,3 +5,13 @@ record(dfanout, "$(P)PS-LCV:Current-SP")
     field(OUTA, "$(P)PS-LCV-1:Current-SP PP")
     field(OUTB, "$(P)PS-LCV-2:Current-SP PP")
 }
+
+record(ao, "$(P)PS-LCV:CurrentSP-RB")
+{
+    field(SDIS, "$(P)PS-LCV:Current-SP.PROC")
+    field(DISV, 1)
+
+    field(DOL, "$(P)PS-LCV-1:Current-SP CP")
+    field(OMSL, "closed_loop")
+    field(OUT, "$(P)PS-LCV:Current-SP PP")
+}
