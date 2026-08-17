@@ -5,7 +5,7 @@
 cd "${TOP}"
 
 epicsEnvSet("P", "SI-11SP:")
-epicsEnvSet("R", "AP-Ramp:")
+epicsEnvSet("R", "AP-RampLC:")
 
 ## Register all support components
 dbLoadDatabase "$(TOP)/dbd/SoftRamplc.dbd"
