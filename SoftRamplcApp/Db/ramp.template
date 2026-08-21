@@ -20,8 +20,10 @@ record(calcout, "$(P)$(R)RampCalc$(ORIENTATION)") {
     field(INPC, "$(P)$(R)TargetCurrent$(ORIENTATION)-RB")
 
     field(SCAN, "1 second")
-    field(CALC, "(C<(A-B)) ? (A-B) : ((A+B)>C ? C : (A+B))")
+    field(CALC, "A != C")
+    field(OCAL, "(C<(A-B)) ? (A-B) : ((A+B)>C ? C : (A+B))")
 
     field(OUT, "$(P)$(HW_SP)Current-SP PP")
-    field(OOPT, "On Change")
+    field(OOPT, "When Non-zero")
+    field(DOPT, "Use OCAL")
 }
