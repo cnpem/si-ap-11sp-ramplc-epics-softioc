@@ -9,8 +9,16 @@ record(ai, "$(P)$(R)CurrentStep-RB") {
     field(EGU, "A")
 }
 
-record(bo, "$(P)$(R)Start-Cmd") {
+record(bo, "$(P)$(R)RampEnable-Sel") {
     field(DESC, "Enable the current ramp")
+    field(ZNAM, "Disabled")
+    field(ONAM, "Enabled")
+}
+
+record(bi, "$(P)$(R)RampEnable-Sts") {
+    field(DESC, "Enable the current ramp")
+
+    field(INP, "$(P)$(R)RampEnable-Sel CP")
     field(ZNAM, "Disabled")
     field(ONAM, "Enabled")
 }
@@ -19,7 +27,7 @@ record(bo, "$(P)$(R)Start-Cmd") {
 # (Start-Cmd) and the feedfoward loop is disabled (LoopState-Sts)
 
 record(calcout, "$(P)$(R)CheckWriting") {
-    field(INPA, "$(P)$(R)Start-Cmd CP")
+    field(INPA, "$(P)$(R)RampEnable-Sts CP")
     field(INPB, "$(P)BS-IDFF-LC:LoopState-Sts CP")
 
     field(CALC, "A && !B")
